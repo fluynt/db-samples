@@ -1,10 +1,3 @@
-DROP DATABASE   /*!32312 IF EXISTS*/ Northwind;
-
-CREATE DATABASE Northwind  CHAR SET utf8 COLLATE utf8_bin ; 
-
-
-USE Northwind;
-
 CREATE TABLE Category (
   categoryId INT AUTO_INCREMENT NOT NULL
   ,categoryName VARCHAR(15) NOT NULL
@@ -97,7 +90,7 @@ CREATE TABLE EmployeeTerritory (
   ,FOREIGN KEY (employeeId)
       REFERENCES Employee(employeeId)
   ,FOREIGN KEY (territoryId)
-      REFERENCES Territory(territoryId)    
+      REFERENCES Territory(territoryId)
   ) ENGINE=INNODB;
 
 CREATE TABLE Supplier (
@@ -168,7 +161,7 @@ CREATE TABLE SalesOrder (
    , FOREIGN KEY (shipperid)
       REFERENCES Shipper(shipperid)
    ,FOREIGN KEY (custId)
-      REFERENCES Customer(custId) 
+      REFERENCES Customer(custId)
 
   ) ENGINE=INNODB;
 
@@ -185,7 +178,7 @@ CREATE TABLE OrderDetail (
   ,FOREIGN KEY (orderId)
       REFERENCES SalesOrder(orderId)
        ,FOREIGN KEY (productId)
-      REFERENCES Product(productId) 
+      REFERENCES Product(productId)
   ) ENGINE=INNODB;
 
 
@@ -212,7 +205,7 @@ INSERT INTO Employee(employeeid, lastname, firstname, title, titleofcourtesy, bi
 INSERT INTO Employee(employeeid, lastname, firstname, title, titleofcourtesy, birthdate, hiredate, address, city, region, postalcode, country, phone, mgrid)
   VALUES(9, N'Dolgopyatova', N'Zoya', N'Sales Representative', N'Ms.', '1976-01-27 00:00:00.000', '2004-11-15 00:00:00.000', N'1234 Houndstooth Rd.', N'London', NULL, N'10008', N'UK', N'(71) 456-7890', 5);
 
--- ---  
+-- ---
 
 
 INSERT INTO Supplier(supplierid, companyname, contactname, contacttitle, address, city, region, postalcode, country, phone, fax)
@@ -6620,14 +6613,14 @@ INSERT INTO OrderDetail(orderid, productid, unitprice, quantity, discount)
   VALUES(11077, 77, 13.00, 2, 0);
 
 
--- Region 
+-- Region
 
 INSERT INTO Region VALUES (1,'Eastern');
 INSERT INTO Region VALUES (2,'Western');
 INSERT INTO Region VALUES (3,'Northern');
 INSERT INTO Region VALUES (4,'Southern');
 
--- Territory 
+-- Territory
 
 INSERT INTO Territory  VALUES ('01581','Westboro',1);
 INSERT INTO Territory  VALUES ('01730','Bedford',1);
